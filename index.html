@@ -994,6 +994,11 @@
         color: white;
       }
 
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .dress-card {
         cursor: pointer;
       }
@@ -1110,6 +1115,10 @@
 
       .dress-modal-content p {
         color: rgba(255, 255, 255, 0.8);
+      }
+
+      .wishes-card {
+        grid-column: 2;
       }
 
       @media (max-width: 768px) {
@@ -1331,15 +1340,14 @@
         <div class="card">
           <div class="venue-info">
             <h3>Место проведения</h3>
-            <p>Сбор гостей с 15:00</p>
             <p>📍 Ресторан «Двин Холл»</p>
 
             <p>
               г. Краснодар,<br />
-              ул. Офицерская, 49
+              ул. Офицерская, 47
             </p>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=38.988105%2C45.059841&z=16"
+              src="https://yandex.ru/map-widget/v1/?ll=38.987485%2C45.060000&z=16"
               width="100%"
               height="180"
               frameborder="0"
@@ -1348,7 +1356,7 @@
 
             <div class="venue-actions">
               <a
-                href="https://yandex.ru/maps/?rtext=~45.059841,38.988105"
+                href="https://yandex.ru/maps/?rtext=~45.060000,38.987485"
                 target="_blank"
                 class="route-btn"
               >
@@ -1356,7 +1364,7 @@
               </a>
 
               <a
-                href="https://maps.google.com/?q=45.059841,38.988105"
+                href="https://maps.google.com/?q=45.060000,38.987485"
                 target="_blank"
                 class="route-btn"
               >
@@ -1364,7 +1372,7 @@
               </a>
 
               <a
-                href="https://2gis.ru/search/45.059841,38.988105"
+                href="https://2gis.ru/search/45.060000,38.987485"
                 target="_blank"
                 class="route-btn"
               >
@@ -1372,6 +1380,43 @@
               </a>
             </div>
           </div>
+        </div>
+
+        <div class="card">
+          <h3>Программа дня</h3>
+
+          <p>
+            🕒 <strong>15:00</strong><br />
+            Сбор гостей у Екатерининского ЗАГСа
+          </p>
+
+          <br />
+
+                    <p>
+            ✍️ <strong>16:00</strong><br />
+            Начало регистрации
+          </p>
+
+          <br />
+
+          <p>
+            🥂 <strong>16:30</strong><br />
+            Фуршет и встреча гостей перед банкетным залом
+          </p>
+
+          <br />
+
+          <p>
+            🎉 <strong>17:00</strong><br />
+            Торжественное начало банкета
+          </p>
+
+          <br />
+
+          <p>
+            💃 Далее вас ждут танцы, конкурсы, поздравления и незабываемый вечер
+            вместе с нами ❤️
+          </p>
         </div>
 
         <div class="card dress-card">
@@ -1391,7 +1436,7 @@
           <p class="dress-hint">✨ Нажмите, чтобы посмотреть примеры</p>
         </div>
 
-        <div class="card">
+        <div class="card wishes-card">
           <h3>Пожелания</h3>
           <p>
             Ваше присутствие на нашем празднике — самый ценный подарок для нас.
