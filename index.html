@@ -1118,7 +1118,7 @@
       }
 
       .wishes-card {
-        grid-column: 2;
+        grid-column: 2 / 3;
       }
 
       @media (max-width: 768px) {
@@ -1142,6 +1142,10 @@
 
         .cards {
           grid-template-columns: 1fr;
+        }
+
+        .wishes-card {
+          grid-column: 1;
         }
 
         .gallery {
@@ -1483,7 +1487,7 @@
               target="_blank"
               class="contact-chat-link"
             >
-              <img src="images/telegram.svg" alt="Telegram" />
+              <img src="images/Telegram.png" alt="Telegram" />
             </a>
 
             <span class="contact-divider"> или </span>
@@ -1835,7 +1839,7 @@
 
       // RSVP TELEGRAM
 
-      const TOKEN = "";
+      const TOKEN = "8962313713:AAHOb3ZHBlOQMbBZVFEPzeTb2KfqxHstwx8";
       const CHAT_IDS = ["296106942", "619440033"];
 
       const plusOneToggle = document.getElementById("plusOneToggle");
@@ -2023,7 +2027,7 @@
                 target="_blank"
                 class="chat-btn"
               >
-                <img src="images/telegram.svg">
+                <img src="images/telegram.png">
 
                 <span>Вступить в Telegram</span>
               </a>
