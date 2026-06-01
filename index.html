@@ -1837,11 +1837,6 @@
         }
       });
 
-      // RSVP TELEGRAM
-
-      const TOKEN = "8962313713:AAHOb3ZHBlOQMbBZVFEPzeTb2KfqxHstwx8";
-      const CHAT_IDS = ["296106942", "619440033"];
-
       const plusOneToggle = document.getElementById("plusOneToggle");
 
       const guestsContainer = document.getElementById("guestsContainer");
@@ -1989,16 +1984,18 @@
     `;
         }
         try {
-          for (const chatId of CHAT_IDS) {
+          alert("Начинаю отправку");
+
             const response = await fetch(
-              `https://api.telegram.org/bot${TOKEN}/sendMessage`,
+              "https://delicate-rice-df36.nick-one199.workers.dev/",
               {
                 method: "POST",
+
                 headers: {
                   "Content-Type": "application/json",
                 },
+
                 body: JSON.stringify({
-                  chat_id: chatId,
                   text: text,
                 }),
               },
@@ -2008,12 +2005,13 @@
 
             const result = await response.text();
 
+            alert(result);
+
             console.log(result);
 
             if (!response.ok) {
               throw new Error(`Telegram API error: ${response.status}`);
             }
-          }
 
           if (attendance === "yes") {
             document.querySelector(".rsvp-modal").innerHTML = `
@@ -2038,7 +2036,7 @@
                 target="_blank"
                 class="chat-btn"
               >
-                <img src="images/telegram.png">
+                <img src="images/Telegram.png">
 
                 <span>Вступить в Telegram</span>
               </a>
