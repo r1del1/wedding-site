@@ -1984,7 +1984,6 @@
     `;
         }
         try {
-          alert("Начинаю отправку");
 
             const response = await fetch(
               "https://delicate-rice-df36.nick-one199.workers.dev/",
@@ -2001,16 +2000,8 @@
               },
             );
 
-            console.log("Status:", response.status);
-
-            const result = await response.text();
-
-            alert(result);
-
-            console.log(result);
-
             if (!response.ok) {
-              throw new Error(`Telegram API error: ${response.status}`);
+              throw new Error(`Worker error: ${response.status}`);
             }
 
           if (attendance === "yes") {
