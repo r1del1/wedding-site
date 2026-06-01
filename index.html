@@ -1396,7 +1396,7 @@
 
           <br />
 
-                    <p>
+          <p>
             ✍️ <strong>16:00</strong><br />
             Начало регистрации
           </p>
@@ -1516,7 +1516,7 @@
         </p>
 
         <form class="rsvp-form">
-          <input type="text" placeholder="Ваши имя и фамилия" required />
+          <input type="text" placeholder="Ваше имя" required />
 
           <label class="plus-one-toggle">
             <input type="checkbox" id="plusOneToggle" />
@@ -1990,18 +1990,29 @@
         }
         try {
           for (const chatId of CHAT_IDS) {
-            await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-              method: "POST",
-
-              headers: {
-                "Content-Type": "application/json",
+            const response = await fetch(
+              `https://api.telegram.org/bot${TOKEN}/sendMessage`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  chat_id: chatId,
+                  text: text,
+                }),
               },
+            );
 
-              body: JSON.stringify({
-                chat_id: chatId,
-                text: text,
-              }),
-            });
+            console.log("Status:", response.status);
+
+            const result = await response.text();
+
+            console.log(result);
+
+            if (!response.ok) {
+              throw new Error(`Telegram API error: ${response.status}`);
+            }
           }
 
           if (attendance === "yes") {
@@ -2027,7 +2038,7 @@
                 target="_blank"
                 class="chat-btn"
               >
-                <img src="images/Telegram.png">
+                <img src="images/telegram.png">
 
                 <span>Вступить в Telegram</span>
               </a>
@@ -2064,9 +2075,9 @@
         `;
           }
         } catch (error) {
-          alert("Ошибка отправки 😢");
-
           console.error(error);
+
+          alert("Ошибка: " + error.message);
         }
       });
 
